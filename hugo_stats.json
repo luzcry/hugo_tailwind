@@ -1,0 +1,22 @@
+{
+  "htmlElements": {
+    "tags": [
+      "!doctype",
+      "body",
+      "div",
+      "h1",
+      "header",
+      "html",
+      "link",
+      "script"
+    ],
+    "classes": [
+      "bg-red-500",
+      "text-center",
+      "w-full"
+    ],
+    "ids": [
+      "content"
+    ]
+  }
+}

@@ -4,4 +4,10 @@
 {{ else }}
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-{{ end }}
+  {{ $css := resources.Get "css/main.css" }}
+  {{ $css = $css | resources.PostCSS }}
+  {{ if hugo.IsProduction }}
+  {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+  {{ end }}
+  <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
+  {{ end }}
